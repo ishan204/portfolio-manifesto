@@ -16,7 +16,7 @@ export function Navbar() {
   ]
 
   return (
-    <nav className="sticky top-0 z-50 bg-comic-yellow border-b-4 border-black comic-shadow">
+    <nav className="sticky top-0 z-50 bg-comic-yellow border-b-4 border-black comic-shadow ">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
         {/* Logo - Bat symbol */}
         <Link href="/" className="font-bangers text-2xl font-bold text-comic-red">
@@ -29,7 +29,7 @@ export function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="font-comic font-bold px-4 py-2 border-2 border-black text-black hover:bg-black hover:text-comic-yellow transition-colors"
+              className="font-comic font-bold px-4 py-2 border-2 border-black text-black hover:bg-black hover:text-[#FFF000] transition-colors"
             >
               {item.label}
             </Link>

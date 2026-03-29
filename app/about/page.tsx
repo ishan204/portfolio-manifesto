@@ -133,7 +133,7 @@ export default function About() {
       </section>
 
       {/* Core Values Section */}
-      <section className="relative py-20 bg-comic-red text-white border-b-8 border-black">
+      <section className="relative py-20 bg-comic-red text-black border-b-8 border-black">
         <HalftoneOverlay color="red" opacity={0.2} />
         
         <div className="max-w-4xl mx-auto px-4 relative z-10">

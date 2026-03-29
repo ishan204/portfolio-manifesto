@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { ComicPanel } from '@/components/ComicPanel'
-import { ComicButton } from '@/components/ComicButton'
+import { ComicButton } from '../components/ComicButton'
 import { SoundBurst } from '@/components/SoundBurst'
 import { CaptionBox } from '@/components/CaptionBox'
 import { HalftoneOverlay } from '@/components/HalftoneOverlay'
@@ -206,7 +206,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="relative py-20 bg-comic-blue text-white border-t-8 border-black">
+      <section className="relative py-20 bg-comic-blue text-black border-t-8 border-black">
         <HalftoneOverlay color="blue" opacity={0.2} />
         
         <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -258,10 +258,10 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-bangers text-4xl text-white mb-6">
+            <h2 className="font-bangers text-4xl text-black mb-6">
               READY FOR ACTION?
             </h2>
-            <p className="font-comic text-white mb-8 text-lg">
+            <p className="font-comic text-black mb-8 text-lg">
               Dive into our world and discover amazing projects, stories, and experiences.
             </p>
             <ComicButton variant="outline">

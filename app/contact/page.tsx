@@ -194,7 +194,7 @@ export default function Contact() {
       </section>
 
       {/* Response Time Section */}
-      <section className="relative py-16 bg-comic-red text-white border-t-8 border-black">
+      <section className="relative py-16 bg-comic-red text-black border-t-8 border-black">
         <HalftoneOverlay color="red" opacity={0.2} />
         
         <div className="max-w-3xl mx-auto px-4 text-center relative z-10">

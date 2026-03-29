@@ -8,9 +8,9 @@ interface HalftoneOverlayProps {
 
 export function HalftoneOverlay({ color = 'black', opacity = 0.3, className = '' }: HalftoneOverlayProps) {
   const colorClasses = {
-    black: 'halftone',
-    blue: 'halftone-blue',
-    red: 'halftone-red',
+    black: '[background-image:radial-gradient(circle,#1a1a1a_2px,transparent_2px)] [background-size:8px_8px]',
+    blue:"[background-image:radial-gradient(circle,#0066FF_2px,transparent_2px)] [background-size:8px_8px]",
+    red:'[background-image:radial-gradient(circle,#FF0000_2px,transparent_2px)] [background-size:8px_8px]',
   }
 
   return (

@@ -8,7 +8,7 @@ interface CaptionBoxProps {
 
 export function CaptionBox({ children, number, className = '' }: CaptionBoxProps) {
   return (
-    <div className={`bg-comic-yellow border-2 border-black p-3 font-comic text-sm ${className}`}>
+    <div className={`bg-[#FFF000] border-2 border-black p-3 font-comic text-sm ${className}`}>
       {number && (
         <div className="font-bold mb-2 text-xs">
           {number}
