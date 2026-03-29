@@ -1,45 +1,29 @@
-import type { Metadata } from 'next'
-import { Bangers, Comic_Neue } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import './globals.css'
-
-const bangers = Bangers({ weight: '400', subsets: ["latin"], variable: '--font-bangers' });
-const comicNeue = Comic_Neue({ weight: ['400', '700'], subsets: ["latin"], variable: '--font-comic' });
+import type { Metadata } from 'next';
+import Navbar from '@/components/Navbar';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Umang Raj Jaiswal | Engineering Student & Builder',
-  description: 'Portfolio of Umang Raj Jaiswal — Computer Science student at BIT Mesra, public speaker, competitive programmer, and builder of digital experiences.',
-  generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
-}
+  title: 'Umang Raj Jaiswal — Portfolio',
+  description: 'Personal portfolio of Umang Raj Jaiswal — Engineering Student, Public Speaker, Builder.',
+};
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" className={`${bangers.variable} ${comicNeue.variable}`}>
-      <body className="font-comic antialiased bg-yellow-50">
-        {children}
-        <Analytics />
+    <html lang="en">
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,400;0,700;1,400&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body style={{ margin: 0, padding: 0, backgroundColor: '#0a0a0a', overflowX: 'hidden' }}>
+        <Navbar />
+        <main>{children}</main>
       </body>
     </html>
-  )
+  );
 }
