@@ -8,37 +8,38 @@ import { ComicPanel } from '@/components/ComicPanel'
 import { SpeechBubble } from '@/components/SpeechBubble'
 import { CaptionBox } from '@/components/CaptionBox'
 import { HalftoneOverlay } from '@/components/HalftoneOverlay'
+import { ComicButton } from '@/components/ComicButton'
 
 export default function Manifesto() {
   const manifestoPoints = [
     {
-      title: 'WE PROTECT THE INNOCENT',
-      description: 'Every person deserves safety, dignity, and the chance to thrive. We stand guard against injustice.',
-      color: 'red',
-    },
-    {
-      title: 'WE EMBRACE RESPONSIBILITY',
-      description: 'With great power comes great responsibility. We use our abilities for the greater good, always.',
+      title: 'CONTINUOUS LEARNING',
+      description: 'Every challenge is an opportunity to grow. I commit to constant learning and self-improvement in technology and life.',
       color: 'blue',
     },
     {
-      title: 'WE NEVER STOP FIGHTING',
-      description: 'Evil may evolve, but so do we. We adapt, we learn, we overcome every challenge.',
+      title: 'CREATE WITH PURPOSE',
+      description: 'I build solutions that matter. Every project should solve real problems and create positive impact.',
+      color: 'red',
+    },
+    {
+      title: 'SHARE KNOWLEDGE',
+      description: 'Growth multiplies when shared. I believe in lifting others through mentorship, speaking, and open collaboration.',
       color: 'yellow',
     },
     {
-      title: 'WE BELIEVE IN REDEMPTION',
-      description: 'Everyone deserves a second chance. We fight for reform and the possibility of change.',
-      color: 'red',
-    },
-    {
-      title: 'WE STAND TOGETHER',
-      description: 'Alone we are strong, but together we are unstoppable. Unity is our greatest weapon.',
+      title: 'EMBRACE CHALLENGES',
+      description: 'Difficulty breeds strength. I welcome obstacles as opportunities to prove my capabilities and push boundaries.',
       color: 'blue',
     },
     {
-      title: 'WE INSPIRE HOPE',
-      description: 'In the darkest times, hope shines brightest. We are beacons of possibility for all.',
+      title: 'CODE WITH INTEGRITY',
+      description: 'Quality and ethics are non-negotiable. I write clean code and maintain high standards in every project.',
+      color: 'red',
+    },
+    {
+      title: 'LEAD BY EXAMPLE',
+      description: 'Actions speak louder than words. I lead through dedication, passion, and unwavering commitment to excellence.',
       color: 'yellow',
     },
   ]
@@ -62,6 +63,16 @@ export default function Manifesto() {
     },
   }
 
+  const handleDownloadManifesto = () => {
+    // Create a link to download the PDF
+    const link = document.createElement('a')
+    link.href = '/manifesto.pdf' // Path to your PDF in the public folder
+    link.download = 'Umang_Raj_Jaiswal_Manifesto.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <main className="min-h-screen bg-comic-cream">
       <Navbar />
@@ -77,7 +88,7 @@ export default function Manifesto() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            OUR MANIFESTO
+            MY MANIFESTO
           </motion.h1>
           <motion.p
             className="font-comic text-xl max-w-3xl"
@@ -85,7 +96,7 @@ export default function Manifesto() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            The principles that guide us. The promises we keep. The values we live by.
+            My commitments, values, and vision for building an impact-driven future through code and leadership.
           </motion.p>
         </div>
       </section>
@@ -101,9 +112,10 @@ export default function Manifesto() {
           >
             <SpeechBubble variant="speech" className="bg-comic-yellow border-4 border-black text-black p-8">
               <p className="font-comic text-lg leading-relaxed">
-                We are more than heroes. We are guardians of hope, defenders of the weak, and champions of justice.
-                This manifesto represents our unwavering commitment to making the world safer, brighter, and 
-                more just for everyone. These aren&apos;t just words—they are the foundation of everything we do.
+                I am a builder, a learner, and a believer in the power of technology to transform the world. 
+                This manifesto represents my unwavering commitment to excellence, integrity, and making a 
+                meaningful impact through every line of code and every conversation. These aren&apos;t just ideals—
+                they are the foundation of how I live and work.
               </p>
             </SpeechBubble>
           </motion.div>
@@ -153,18 +165,18 @@ export default function Manifesto() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            CODE OF HONOR
+            MY CODE OF HONOR
           </motion.h2>
 
           <div className="space-y-4">
             {[
-              'Always stand up for the innocent',
-              'Use power with wisdom and restraint',
-              'Never compromise on justice',
-              'Protect secret identities',
-              'Support your allies unconditionally',
-              'Learn from every battle',
-              'Remember: the mission comes first',
+              'Build solutions that solve real problems',
+              'Write code with clarity and purpose',
+              'Never compromise on quality or ethics',
+              'Lift others through knowledge sharing',
+              'Stay curious and embrace challenges',
+              'Lead with integrity in all endeavors',
+              'Commit fully to every project and person',
             ].map((code, i) => (
               <motion.div
                 key={i}
@@ -195,7 +207,7 @@ export default function Manifesto() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            OUR PLEDGE
+            MY PLEDGE
           </motion.h2>
 
           <motion.div
@@ -206,25 +218,69 @@ export default function Manifesto() {
             viewport={{ once: true }}
           >
             <p className="mb-4">
-              We pledge to uphold these ideals for ourselves, our communities, and future generations.
+              I pledge to live by these principles, to build with purpose, and to create lasting impact 
+              in the world of technology and beyond.
             </p>
             <p className="font-bangers text-3xl mb-4">
-              ★ FOR JUSTICE ★
+              ★ FOR EXCELLENCE & IMPACT ★
             </p>
             <p className="mb-4">
-              We will not rest until every person is safe, every voice is heard, and every dream is possible.
+              I will push boundaries, inspire others, and never stop learning. This is my commitment.
             </p>
             <p className="font-bold text-comic-yellow">
-              THIS IS OUR SOLEMN OATH
+              THIS IS MY SOLEMN OATH
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Download Manifesto Section */}
+      <section className="relative py-20 bg-comic-blue text-white border-t-8 border-black">
+        <HalftoneOverlay color="blue" opacity={0.15} />
+        
+        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+          <motion.h2
+            className="font-bangers text-5xl text-comic-yellow mb-6"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            GET MY MANIFESTO
+          </motion.h2>
+
+          <motion.p
+            className="font-comic text-lg max-w-2xl mx-auto mb-8"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            Download the full manifesto as a PDF. Share it, read it, and let it inspire your own journey.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <button
+              onClick={handleDownloadManifesto}
+              className="inline-block bg-comic-yellow text-black font-bangers text-xl px-8 py-4 border-4 border-white comic-shadow hover:scale-105 transition-transform"
+            >
+              📥 DOWNLOAD MANIFESTO PDF
+            </button>
           </motion.div>
 
           <motion.p
-            className="mt-12 font-bangers text-4xl text-comic-blue"
-            animate={{ rotate: [0, 5, -5, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            className="font-comic text-sm mt-6 text-comic-yellow"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
           >
-            POW! BOOM! BANG! 🦇 🕷️
+            Or view the full text above. Save it, print it, live it.
           </motion.p>
         </div>
       </section>
