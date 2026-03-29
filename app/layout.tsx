@@ -1,29 +1,45 @@
-import type { Metadata } from 'next';
-import Navbar from '@/components/Navbar';
-import './globals.css';
+import type { Metadata } from 'next'
+import { Bangers, Comic_Neue } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
+import './globals.css'
+
+const bangers = Bangers({ weight: '400', subsets: ["latin"], variable: '--font-bangers' });
+const comicNeue = Comic_Neue({ weight: ['400', '700'], subsets: ["latin"], variable: '--font-comic' });
 
 export const metadata: Metadata = {
-  title: 'Umang Raj Jaiswal — Portfolio',
-  description: 'Personal portfolio of Umang Raj Jaiswal — Engineering Student, Public Speaker, Builder.',
-};
+  title: 'Batman × Spider-Man Comic Portfolio',
+  description: 'A vintage 1970s comic book portfolio celebrating two iconic superheroes',
+  generator: 'v0.app',
+  icons: {
+    icon: [
+      {
+        url: '/icon-light-32x32.png',
+        media: '(prefers-color-scheme: light)',
+      },
+      {
+        url: '/icon-dark-32x32.png',
+        media: '(prefers-color-scheme: dark)',
+      },
+      {
+        url: '/icon.svg',
+        type: 'image/svg+xml',
+      },
+    ],
+    apple: '/apple-icon.png',
+  },
+}
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: Readonly<{
+  children: React.ReactNode
+}>) {
   return (
-    <html lang="en">
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,400;0,700;1,400&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body style={{ margin: 0, padding: 0, backgroundColor: '#0a0a0a', overflowX: 'hidden' }}>
-        <Navbar />
-        <main>{children}</main>
+    <html lang="en" className={`${bangers.variable} ${comicNeue.variable}`}>
+      <body className="font-comic antialiased bg-yellow-50">
+        {children}
+        <Analytics />
       </body>
     </html>
-  );
+  )
 }

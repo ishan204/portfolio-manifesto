@@ -1,305 +1,277 @@
-'use client';
+'use client'
 
-import dynamic from 'next/dynamic';
+import React, { useEffect, useRef } from 'react'
+import { motion } from 'framer-motion'
+import { Navbar } from '@/components/Navbar'
+import { Footer } from '@/components/Footer'
+import { ComicPanel } from '@/components/ComicPanel'
+import { ComicButton } from '@/components/ComicButton'
+import { SoundBurst } from '@/components/SoundBurst'
+import { CaptionBox } from '@/components/CaptionBox'
+import { HalftoneOverlay } from '@/components/HalftoneOverlay'
 
-const Galaxy = dynamic(() => import('@/components/Galaxy'), { ssr: false });
+export default function Home() {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
 
-export default function HomePage() {
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+
+    // Set canvas size
+    canvas.width = window.innerWidth
+    canvas.height = 500
+
+    // Animated comic card effect
+    const particles: Array<{
+      x: number
+      y: number
+      vx: number
+      vy: number
+      size: number
+      color: string
+    }> = []
+
+    for (let i = 0; i < 30; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2,
+        size: Math.random() * 3 + 1,
+        color: ['#FFF000', '#0066FF', '#FF0000'][Math.floor(Math.random() * 3)],
+      })
+    }
+
+    let animationId: number
+
+    const animate = () => {
+      // Clear with gradient
+      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height)
+      gradient.addColorStop(0, '#FFF000')
+      gradient.addColorStop(1, '#FFF8E7')
+      ctx.fillStyle = gradient
+      ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+      // Draw halftone pattern
+      ctx.fillStyle = 'rgba(26, 26, 26, 0.05)'
+      for (let x = 0; x < canvas.width; x += 8) {
+        for (let y = 0; y < canvas.height; y += 8) {
+          ctx.beginPath()
+          ctx.arc(x, y, 2, 0, Math.PI * 2)
+          ctx.fill()
+        }
+      }
+
+      // Update and draw particles
+      particles.forEach((p) => {
+        p.x += p.vx
+        p.y += p.vy
+
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1
+
+        ctx.fillStyle = p.color
+        ctx.beginPath()
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
+        ctx.fill()
+      })
+
+      animationId = requestAnimationFrame(animate)
+    }
+
+    animate()
+
+    const handleResize = () => {
+      canvas.width = window.innerWidth
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      cancelAnimationFrame(animationId)
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8 },
+    },
+  }
+
   return (
-    <div style={{
-      position: 'relative',
-      minHeight: '100vh',
-      backgroundColor: '#0a0a0a',
-      overflow: 'hidden',
-      paddingTop: '64px',
-    }}>
-      {/* Galaxy background */}
-      <div style={{
-        position: 'absolute',
-        inset: 0,
-        zIndex: 0,
-        opacity: 0.6,
-      }}>
-        <Galaxy
-          mouseRepulsion={true}
-          mouseInteraction={true}
-          density={1.2}
-          glowIntensity={0.4}
-          saturation={0.15}
-          hueShift={15}
-          twinkleIntensity={0.5}
-          rotationSpeed={0.08}
-          repulsionStrength={2}
-          autoCenterRepulsion={0}
-          starSpeed={0.3}
-          speed={0.8}
-          transparent={true}
+    <main className="min-h-screen bg-comic-cream">
+      <Navbar />
+
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <canvas
+          ref={canvasRef}
+          className="absolute inset-0 z-0"
         />
-      </div>
+        <HalftoneOverlay color="black" opacity={0.15} className="z-10" />
 
-      {/* Hero content */}
-      <div style={{
-        position: 'relative',
-        zIndex: 10,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        minHeight: 'calc(100vh - 64px)',
-        padding: '40px 20px',
-      }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '40px',
-          maxWidth: '1200px',
-          width: '100%',
-          alignItems: 'center',
-        }}>
-          {/* Left column */}
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '24px',
-          }}>
-            {/* Issue label */}
-            <div style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              width: 'fit-content',
-              backgroundColor: '#CC1111',
-              color: '#FFFFFF',
-              padding: '8px 16px',
-              border: '2px solid #000',
-              fontFamily: 'Bangers, cursive',
-              fontSize: '14px',
-              fontWeight: 'bold',
-              letterSpacing: '0.05em',
-            }}>
-              ISSUE #001
-            </div>
+        <motion.div
+          className="relative z-20 text-center max-w-4xl mx-auto px-4"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.h1
+            variants={itemVariants}
+            className="font-bangers text-6xl md:text-8xl font-bold text-comic-red mb-6"
+            style={{
+              textShadow: '3px 3px 0 #0066FF, 6px 6px 0 #1a1a1a',
+            }}
+          >
+            BAT × SPIDER
+          </motion.h1>
 
-            {/* Main heading */}
-            <h1 style={{
-              fontFamily: 'Bangers, cursive',
-              fontSize: 'clamp(52px, 7vw, 90px)',
-              color: '#F4C300',
-              margin: 0,
-              lineHeight: 1.1,
-              WebkitTextStroke: '2px #000',
-              letterSpacing: '0.02em',
-            }}>
-              UMANG RAJ JAISWAL
-            </h1>
-
-            {/* Tagline */}
-            <p style={{
-              fontFamily: 'Comic Neue, cursive',
-              fontSize: '18px',
-              color: '#FFFFFF',
-              fontStyle: 'italic',
-              margin: 0,
-              lineHeight: 1.6,
-            }}>
-              Engineering Student. Public Speaker. Builder of Things.
+          <motion.div
+            variants={itemVariants}
+            className="mb-8"
+          >
+            <p className="font-comic text-2xl md:text-3xl text-comic-black mb-4 font-bold">
+              A LEGENDARY COLLABORATION
             </p>
+            <p className="font-comic text-lg text-comic-black mb-6">
+              Two iconic superheroes, one unforgettable portfolio experience
+            </p>
+          </motion.div>
 
-            {/* Buttons */}
-            <div style={{
-              display: 'flex',
-              gap: '16px',
-              flexWrap: 'wrap',
-            }}>
-              <button style={{
-                backgroundColor: '#F4C300',
-                color: '#000000',
-                border: '3px solid #000',
-                padding: '12px 28px',
-                fontFamily: 'Bangers, cursive',
-                fontSize: '18px',
-                fontWeight: 'bold',
-                cursor: 'pointer',
-                boxShadow: '5px 5px 0 #000',
-                transition: 'transform 0.1s',
-              }}
-              onMouseDown={e => (e.currentTarget.style.transform = 'translate(2px, 2px)')}
-              onMouseUp={e => (e.currentTarget.style.transform = 'translate(0, 0)')}
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col md:flex-row gap-4 justify-center mb-12"
+          >
+            <ComicButton variant="primary">
+              Explore Projects
+            </ComicButton>
+            <ComicButton variant="secondary">
+              Learn About Us
+            </ComicButton>
+          </motion.div>
+
+          <motion.div
+            variants={itemVariants}
+            className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-12"
+          >
+            <ComicPanel variant="blue" className="text-white">
+              <div className="text-3xl font-bangers">99</div>
+              <div className="font-comic text-sm">PROJECTS</div>
+            </ComicPanel>
+            <ComicPanel variant="red" className="text-white">
+              <div className="text-3xl font-bangers">24/7</div>
+              <div className="font-comic text-sm">HEROES</div>
+            </ComicPanel>
+            <ComicPanel variant="yellow" className="text-black">
+              <div className="text-3xl font-bangers">∞</div>
+              <div className="font-comic text-sm">POWER</div>
+            </ComicPanel>
+          </motion.div>
+        </motion.div>
+
+        {/* Animated sound bursts */}
+        <motion.div
+          className="absolute bottom-20 left-10 z-30"
+          animate={{ rotate: [0, -5, 5, 0] }}
+          transition={{ duration: 3, repeat: Infinity }}
+        >
+          <SoundBurst text="POW!" />
+        </motion.div>
+
+        <motion.div
+          className="absolute top-32 right-10 z-30"
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{ duration: 2.5, repeat: Infinity }}
+        >
+          <SoundBurst text="BOOM!" />
+        </motion.div>
+      </section>
+
+      {/* Features Section */}
+      <section className="relative py-20 bg-comic-blue text-white border-t-8 border-black">
+        <HalftoneOverlay color="blue" opacity={0.2} />
+        
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <motion.h2
+            className="font-bangers text-5xl text-comic-yellow text-center mb-12"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            SUPER FEATURES
+          </motion.h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { title: 'ICONIC DESIGN', desc: 'Vintage 1970s comic aesthetics' },
+              { title: 'DYNAMIC ACTION', desc: 'Smooth animations throughout' },
+              { title: 'EPIC CONTENT', desc: 'Rich stories and experiences' },
+            ].map((feature, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: i * 0.2 }}
+                viewport={{ once: true }}
               >
-                See My Work
-              </button>
-              <button style={{
-                backgroundColor: '#CC1111',
-                color: '#FFFFFF',
-                border: '3px solid #000',
-                padding: '12px 28px',
-                fontFamily: 'Bangers, cursive',
-                fontSize: '18px',
-                fontWeight: 'bold',
-                cursor: 'pointer',
-                boxShadow: '5px 5px 0 #000',
-                transition: 'transform 0.1s',
-              }}
-              onMouseDown={e => (e.currentTarget.style.transform = 'translate(2px, 2px)')}
-              onMouseUp={e => (e.currentTarget.style.transform = 'translate(0, 0)')}
-              >
-                Read My Manifesto
-              </button>
-            </div>
-
-            {/* Speech bubble */}
-            <div style={{
-              position: 'relative',
-              backgroundColor: '#FFFFFF',
-              border: '3px solid #000',
-              borderRadius: '16px',
-              padding: '16px 20px',
-              width: 'fit-content',
-              maxWidth: '100%',
-            }}>
-              <p style={{
-                fontFamily: 'Comic Neue, cursive',
-                fontSize: '15px',
-                color: '#000000',
-                fontStyle: 'italic',
-                margin: 0,
-              }}>
-                "With great code comes great responsibility."
-              </p>
-              {/* Tail */}
-              <div style={{
-                position: 'absolute',
-                width: 0,
-                height: 0,
-                borderLeft: '12px solid transparent',
-                borderRight: '0px solid transparent',
-                borderTop: '12px solid #FFFFFF',
-                bottom: '-12px',
-                left: '24px',
-              }} />
-              <div style={{
-                position: 'absolute',
-                width: 0,
-                height: 0,
-                borderLeft: '12px solid transparent',
-                borderRight: '0px solid transparent',
-                borderTop: '12px solid #000',
-                bottom: '-15px',
-                left: '24px',
-              }} />
-            </div>
-          </div>
-
-          {/* Right column */}
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '24px',
-            alignItems: 'center',
-          }}>
-            {/* Comic panel with photo placeholder */}
-            <div style={{
-              width: '100%',
-              maxWidth: '360px',
-              aspectRatio: '3/4',
-              border: '3px solid #000',
-              boxShadow: '8px 8px 0 #F4C300',
-              backgroundColor: '#333333',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              transform: 'rotate(2deg)',
-              position: 'relative',
-            }}>
-              <div style={{
-                textAlign: 'center',
-                fontFamily: 'Bangers, cursive',
-                color: '#F4C300',
-                fontSize: '24px',
-                letterSpacing: '0.05em',
-              }}>
-                [ YOUR PHOTO ]
-              </div>
-
-              {/* POW burst */}
-              <div style={{
-                position: 'absolute',
-                top: '-20px',
-                right: '-20px',
-                width: '120px',
-                height: '120px',
-                backgroundColor: '#F4C300',
-                clipPath: 'polygon(50% 0%, 100% 25%, 100% 50%, 75% 100%, 50% 75%, 25% 100%, 0% 50%, 0% 25%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                border: '3px solid #000',
-              }}>
-                <span style={{
-                  fontFamily: 'Bangers, cursive',
-                  color: '#000000',
-                  fontSize: '40px',
-                  fontWeight: 'bold',
-                  letterSpacing: '0.05em',
-                }}>
-                  POW!
-                </span>
-              </div>
-
-              {/* Hero origin label */}
-              <div style={{
-                position: 'absolute',
-                bottom: '-20px',
-                left: '-20px',
-                backgroundColor: '#CC1111',
-                color: '#FFFFFF',
-                padding: '8px 16px',
-                border: '2px solid #000',
-                fontFamily: 'Bangers, cursive',
-                fontSize: '14px',
-                fontWeight: 'bold',
-                letterSpacing: '0.05em',
-              }}>
-                HERO ORIGIN
-              </div>
-            </div>
+                <ComicPanel variant="yellow" className="text-black h-full">
+                  <h3 className="font-bangers text-2xl mb-4 text-comic-red">
+                    {feature.title}
+                  </h3>
+                  <p className="font-comic text-sm">
+                    {feature.desc}
+                  </p>
+                </ComicPanel>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* City skyline */}
-      <div style={{
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        right: 0,
-        height: '60px',
-        backgroundColor: '#000000',
-        display: 'flex',
-        gap: '8px',
-        padding: '0 20px',
-        alignItems: 'flex-end',
-      }}>
-        {[...Array(15)].map((_, i) => (
-          <div
-            key={i}
-            style={{
-              flex: 1,
-              height: `${40 + (i % 3) * 20}px`,
-              backgroundColor: '#000000',
-              border: '2px solid #333333',
-            }}
-          />
-        ))}
-      </div>
+      {/* CTA Section */}
+      <section className="relative py-16 bg-comic-red border-t-8 border-black">
+        <HalftoneOverlay color="red" opacity={0.2} />
+        
+        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="font-bangers text-4xl text-white mb-6">
+              READY FOR ACTION?
+            </h2>
+            <p className="font-comic text-white mb-8 text-lg">
+              Dive into our world and discover amazing projects, stories, and experiences.
+            </p>
+            <ComicButton variant="outline">
+              START YOUR ADVENTURE
+            </ComicButton>
+          </motion.div>
+        </div>
+      </section>
 
-      {/* Responsive adjustments */}
-      <style>{`
-        @media (max-width: 768px) {
-          div[style*="gridTemplateColumns: '1fr 1fr'"] {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
-    </div>
-  );
+      <Footer />
+    </main>
+  )
 }
