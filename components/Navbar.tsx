@@ -8,9 +8,8 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   const navItems = [
-    { label: 'Home', href: '/' },
     { label: 'About', href: '/about' },
-    { label: 'Projects', href: '/projects' },
+    { label: 'Gallery', href: '/gallery' },
     { label: 'Experience', href: '/experience' },
     { label: 'Events', href: '/events' },
     { label: 'Contact', href: '/contact' },
@@ -20,9 +19,9 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-comic-yellow border-b-4 border-black comic-shadow">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
-        {/* Logo - Bat symbol */}
-        <Link href="/" className="font-bangers text-2xl font-bold text-comic-red">
-          ★ BAT ★
+        {/* Logo - URJ with bat symbol */}
+        <Link href="/" className="font-bangers text-3xl font-bold text-yellow-400 flex items-center gap-1">
+          URJ. <span className="text-sm">⚡</span>
         </Link>
 
         {/* Desktop Menu */}

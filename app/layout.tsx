@@ -7,8 +7,8 @@ const bangers = Bangers({ weight: '400', subsets: ["latin"], variable: '--font-b
 const comicNeue = Comic_Neue({ weight: ['400', '700'], subsets: ["latin"], variable: '--font-comic' });
 
 export const metadata: Metadata = {
-  title: 'Batman × Spider-Man Comic Portfolio',
-  description: 'A vintage 1970s comic book portfolio celebrating two iconic superheroes',
+  title: 'Umang Raj Jaiswal | Engineering Student & Builder',
+  description: 'Portfolio of Umang Raj Jaiswal — Computer Science student at BIT Mesra, public speaker, competitive programmer, and builder of digital experiences.',
   generator: 'v0.app',
   icons: {
     icon: [
