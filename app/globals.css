@@ -1,0 +1,139 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Comic Book Color Palette - 1970s authentic */
+  --comic-yellow: #FFF000;
+  --comic-blue: #0066FF;
+  --comic-red: #FF0000;
+  --comic-black: #1a1a1a;
+  --comic-cream: #FFF8E7;
+  
+  --background: #FFF8E7;
+  --foreground: #1a1a1a;
+  --card: #FFFFFF;
+  --card-foreground: #1a1a1a;
+  --popover: #FFFFFF;
+  --popover-foreground: #1a1a1a;
+  --primary: #FF0000;
+  --primary-foreground: #FFFFFF;
+  --secondary: #0066FF;
+  --secondary-foreground: #FFFFFF;
+  --muted: #F0F0F0;
+  --muted-foreground: #666666;
+  --accent: #FFF000;
+  --accent-foreground: #1a1a1a;
+  --destructive: #FF0000;
+  --destructive-foreground: #FFFFFF;
+  --border: #1a1a1a;
+  --input: #FFFFFF;
+  --ring: #0066FF;
+  --radius: 0;
+}
+
+@theme inline {
+  --font-comic: var(--font-comic), 'Comic Neue', cursive;
+  --font-bangers: var(--font-bangers), 'Bangers', cursive;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Comic Book Utilities */
+@layer components {
+  /* Hard shadow for comic effect */
+  .comic-shadow {
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
+  }
+  
+  .comic-shadow-lg {
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 1);
+  }
+  
+  /* Halftone dot pattern overlay */
+  .halftone {
+    background-image: radial-gradient(circle, #1a1a1a 2px, transparent 2px);
+    background-size: 8px 8px;
+  }
+  
+  .halftone-blue {
+    background-image: radial-gradient(circle, #0066FF 2px, transparent 2px);
+    background-size: 8px 8px;
+  }
+  
+  .halftone-red {
+    background-image: radial-gradient(circle, #FF0000 2px, transparent 2px);
+    background-size: 8px 8px;
+  }
+  
+  /* Torn paper edge effect */
+  .torn-edge {
+    position: relative;
+  }
+  
+  .torn-edge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background-image: linear-gradient(90deg, transparent 0%, transparent 2px, currentColor 2px, currentColor 4px, transparent 4px, transparent 6px);
+    background-size: 6px 100%;
+    opacity: 0.3;
+  }
+  
+  /* Comic book panel border */
+  .comic-panel {
+    @apply border-4 border-black bg-white;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
+  }
+  
+  /* Comic book title/heading */
+  .comic-title {
+    font-family: var(--font-bangers);
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #FF0000;
+    text-shadow: 3px 3px 0 #0066FF;
+  }
+  
+  .comic-subtitle {
+    font-family: var(--font-comic);
+    font-weight: bold;
+    color: #1a1a1a;
+  }
+}
