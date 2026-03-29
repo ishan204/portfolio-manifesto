@@ -141,7 +141,7 @@ export default function Home() {
               textShadow: '3px 3px 0 #0066FF, 6px 6px 0 #1a1a1a',
             }}
           >
-            BAT × SPIDER
+            UMANG RAJ JAISWAL
           </motion.h1>
 
           <motion.div
@@ -149,7 +149,7 @@ export default function Home() {
             className="mb-8"
           >
             <p className="font-comic text-2xl md:text-3xl text-comic-black mb-4 font-bold">
-              A LEGENDARY COLLABORATION
+              NOT SO TYPICAL GUY
             </p>
             <p className="font-comic text-lg text-comic-black mb-6">
               Two iconic superheroes, one unforgettable portfolio experience
