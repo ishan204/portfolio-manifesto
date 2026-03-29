@@ -9,9 +9,9 @@ interface ComicPanelProps {
 export function ComicPanel({ children, variant = 'default', className = '' }: ComicPanelProps) {
   const bgColors = {
     default: 'bg-white',
-    blue: 'bg-comic-blue',
-    red: 'bg-comic-red',
-    yellow: 'bg-comic-yellow',
+    blue: 'bg-[#0066FF]',
+    red: 'bg-[#FF0000]',
+    yellow: 'bg-[#FFF000]',
   }
   
   const textColors = {

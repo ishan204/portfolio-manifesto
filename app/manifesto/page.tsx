@@ -78,7 +78,7 @@ export default function Manifesto() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-comic-red text-white border-b-8 border-black">
+      <section className="relative py-20 bg-comic-red text-black border-b-8 border-black">
         <HalftoneOverlay color="red" opacity={0.2} />
         
         <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -154,7 +154,7 @@ export default function Manifesto() {
       </section>
 
       {/* Code of Honor Section */}
-      <section className="relative py-20 bg-comic-blue text-white border-y-8 border-black">
+      <section className="relative py-20 bg-comic-blue text-black border-y-8 border-black">
         <HalftoneOverlay color="blue" opacity={0.2} />
         
         <div className="max-w-4xl mx-auto px-4 relative z-10">
@@ -211,7 +211,7 @@ export default function Manifesto() {
           </motion.h2>
 
           <motion.div
-            className="bg-comic-red text-white p-8 border-4 border-black comic-shadow text-lg font-comic"
+            className="bg-comic-red text-black p-8 border-4 border-black comic-shadow text-lg font-comic"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -235,7 +235,7 @@ export default function Manifesto() {
       </section>
 
       {/* Download Manifesto Section */}
-      <section className="relative py-20 bg-comic-blue text-white border-t-8 border-black">
+      <section className="relative py-20 bg-comic-blue text-black border-t-8 border-black">
         <HalftoneOverlay color="blue" opacity={0.15} />
         
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">

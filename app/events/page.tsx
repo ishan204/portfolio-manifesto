@@ -107,7 +107,7 @@ export default function Events() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-comic-red text-white border-b-8 border-black">
+      <section className="relative py-20 bg-comic-red text-black border-b-8 border-black">
         <HalftoneOverlay color="red" opacity={0.2} />
         
         <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -120,7 +120,7 @@ export default function Events() {
             EVENTS & TALKS
           </motion.h1>
           <motion.p
-            className="font-comic text-xl max-w-3xl"
+            className="font-comic text-xl  max-w-3xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -201,7 +201,7 @@ export default function Events() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="relative py-20 bg-comic-blue text-white border-t-8 border-black">
+      <section className="relative py-20 bg-comic-blue text-black border-t-8 border-black">
         <HalftoneOverlay color="blue" opacity={0.2} />
         
         <div className="max-w-3xl mx-auto px-4 text-center relative z-10">
