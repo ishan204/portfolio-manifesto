@@ -45,7 +45,7 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            ABOUT THE HEROES
+            ABOUT ME
           </motion.h1>
           <motion.p
             className="font-comic text-xl text-comic-black max-w-3xl"
@@ -53,91 +53,98 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Learn about the legendary partnership of the Dark Knight and the Friendly Neighborhood hero.
+            Everything you need to know about UMANG RAJ JAISWAL.
           </motion.p>
         </div>
       </section>
 
-      {/* Two Column Content */}
+      {/* Main Bio Section */}
       <section className="py-20 border-b-8 border-black">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-12"
+            className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {/* Batman */}
+            {/* Profile */}
             <motion.div variants={itemVariants}>
-              <ComicPanel variant="blue" className="text-white mb-6">
-                <h2 className="font-bangers text-3xl mb-4 text-comic-yellow">
-                  THE DARK KNIGHT
+              <ComicPanel variant="blue" className="text-white p-8">
+                <h2 className="font-bangers text-4xl mb-4 text-comic-yellow">
+                  UMANG RAJ JAISWAL
                 </h2>
-                <p className="font-comic text-sm mb-4">
-                  With his sophisticated detective skills, advanced technology, and unwavering determination, Batman has protected Gotham from the shadows for decades.
+                <p className="font-comic text-sm mb-6">
+                  I&apos;m a Computer Science student at BIT Mesra with a passion for building digital experiences and solving complex problems. My journey spans competitive programming, public speaking, and turning ideas into reality through code.
                 </p>
-                <p className="font-comic text-sm">
-                  Discipline, intelligence, and resourcefulness define his approach to justice.
+                <p className="font-comic text-sm mb-6">
+                  With a curious mind and driven spirit, I believe in pushing boundaries and creating meaningful impact through technology and innovation.
                 </p>
+                <div className="space-y-3 mt-6">
+                  <div className="font-comic text-sm"><strong>📍 Location:</strong> BIT Mesra, India</div>
+                  <div className="font-comic text-sm"><strong>🎓 Education:</strong> Computer Science</div>
+                  <div className="font-comic text-sm"><strong>💻 Focus:</strong> Full-stack Development & Problem Solving</div>
+                </div>
               </ComicPanel>
-              
-              <div className="space-y-4">
-                <CaptionBox number={1}>
-                  <strong>Superpower:</strong> Strategic Intellect
-                </CaptionBox>
-                <CaptionBox number={2}>
-                  <strong>Weakness:</strong> Humanity
-                </CaptionBox>
-                <CaptionBox number={3}>
-                  <strong>Era:</strong> 1939 - Present
-                </CaptionBox>
-              </div>
             </motion.div>
 
-            {/* Spider-Man */}
+            {/* Skills & Achievements */}
             <motion.div variants={itemVariants}>
-              <ComicPanel variant="red" className="text-white mb-6">
-                <h2 className="font-bangers text-3xl mb-4 text-comic-yellow">
-                  THE WALL-CRAWLER
-                </h2>
-                <p className="font-comic text-sm mb-4">
-                  With great power comes great responsibility. Spider-Man balances his incredible abilities with his commitment to protecting New York and its people.
-                </p>
-                <p className="font-comic text-sm">
-                  Agility, wit, and heart make him the hero that people believe in.
-                </p>
-              </ComicPanel>
-              
-              <div className="space-y-4">
-                <CaptionBox number={4}>
-                  <strong>Superpower:</strong> Web-Slinging
-                </CaptionBox>
-                <CaptionBox number={5}>
-                  <strong>Weakness:</strong> Emotion
-                </CaptionBox>
-                <CaptionBox number={6}>
-                  <strong>Era:</strong> 1962 - Present
-                </CaptionBox>
+              <div className="space-y-6">
+                <ComicPanel variant="red" className="text-white p-6">
+                  <h3 className="font-bangers text-2xl mb-4 text-comic-yellow">
+                    SKILLS
+                  </h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="font-comic text-sm bg-black bg-opacity-30 p-3 border-2 border-white">
+                      <strong>Programming</strong>
+                      <p className="text-xs mt-1">JavaScript, Python, C++</p>
+                    </div>
+                    <div className="font-comic text-sm bg-black bg-opacity-30 p-3 border-2 border-white">
+                      <strong>Frontend</strong>
+                      <p className="text-xs mt-1">React, Next.js, Tailwind</p>
+                    </div>
+                    <div className="font-comic text-sm bg-black bg-opacity-30 p-3 border-2 border-white">
+                      <strong>Backend</strong>
+                      <p className="text-xs mt-1">Node.js, Databases</p>
+                    </div>
+                    <div className="font-comic text-sm bg-black bg-opacity-30 p-3 border-2 border-white">
+                      <strong>Other</strong>
+                      <p className="text-xs mt-1">Leadership, Speaking</p>
+                    </div>
+                  </div>
+                </ComicPanel>
+
+                <div className="space-y-3">
+                  <CaptionBox number={1}>
+                    <strong>Competitive Programmer</strong> - Passionate about solving algorithmic challenges
+                  </CaptionBox>
+                  <CaptionBox number={2}>
+                    <strong>Public Speaker</strong> - Sharing knowledge and inspiring others
+                  </CaptionBox>
+                  <CaptionBox number={3}>
+                    <strong>Builder</strong> - Turning concepts into functional applications
+                  </CaptionBox>
+                </div>
               </div>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Mission Section */}
+      {/* Core Values Section */}
       <section className="relative py-20 bg-comic-red text-white border-b-8 border-black">
         <HalftoneOverlay color="red" opacity={0.2} />
         
         <div className="max-w-4xl mx-auto px-4 relative z-10">
           <motion.h2
-            className="font-bangers text-5xl text-comic-yellow text-center mb-8"
+            className="font-bangers text-5xl text-comic-yellow text-center mb-12"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            OUR MISSION
+            MY CORE VALUES
           </motion.h2>
           
           <motion.div
@@ -148,23 +155,23 @@ export default function About() {
             viewport={{ once: true }}
           >
             <SpeechBubble variant="shout" className="bg-comic-yellow text-black">
-              <strong className="text-lg">JUSTICE</strong>
+              <strong className="text-lg">GROWTH</strong>
               <p className="font-comic text-sm mt-2">
-                Fighting for what&apos;s right, for everyone.
+                Constantly learning and improving myself every day.
               </p>
             </SpeechBubble>
             
             <SpeechBubble variant="shout" className="bg-comic-yellow text-black">
-              <strong className="text-lg">RESPONSIBILITY</strong>
+              <strong className="text-lg">INTEGRITY</strong>
               <p className="font-comic text-sm mt-2">
-                With great power, comes great duty.
+                Being honest and transparent in all my work.
               </p>
             </SpeechBubble>
             
             <SpeechBubble variant="shout" className="bg-comic-yellow text-black">
-              <strong className="text-lg">UNITY</strong>
+              <strong className="text-lg">IMPACT</strong>
               <p className="font-comic text-sm mt-2">
-                Stronger together than apart.
+                Creating meaningful value through technology.
               </p>
             </SpeechBubble>
           </motion.div>

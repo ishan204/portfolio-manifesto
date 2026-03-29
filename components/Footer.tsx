@@ -12,10 +12,10 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="font-bangers text-xl text-comic-yellow mb-4">
-              BATMAN & SPIDER-MAN
+              UMANG RAJ JAISWAL
             </h3>
             <p className="font-comic text-sm">
-              A celebration of two iconic superheroes from the Golden Age of Comics.
+              CS Student, Builder, Speaker. Crafting digital experiences and inspiring communities through code.
             </p>
           </div>
           
@@ -24,8 +24,8 @@ export function Footer() {
               QUICK LINKS
             </h3>
             <ul className="font-comic text-sm space-y-2">
-              <li><a href="/about" className="hover:text-comic-yellow transition">About</a></li>
-              <li><a href="/projects" className="hover:text-comic-yellow transition">Projects</a></li>
+              <li><a href="/about" className="hover:text-comic-yellow transition">About Me</a></li>
+              <li><a href="/events" className="hover:text-comic-yellow transition">Events</a></li>
               <li><a href="/contact" className="hover:text-comic-yellow transition">Contact</a></li>
             </ul>
           </div>
@@ -41,8 +41,8 @@ export function Footer() {
         </div>
         
         <div className="border-t-2 border-comic-red pt-8 text-center font-comic text-sm">
-          <p>&copy; 2024 Batman × Spider-Man Portfolio. All rights reserved.</p>
-          <p className="text-comic-yellow mt-2 font-bangers">POW! BOOM! BANG!</p>
+          <p>&copy; 2024 Umang Raj Jaiswal. All rights reserved.</p>
+          <p className="text-comic-yellow mt-2 font-bangers">BUILDING THE FUTURE! 💻</p>
         </div>
       </div>
     </footer>
