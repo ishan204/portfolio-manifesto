@@ -148,11 +148,11 @@ export default function Home() {
             variants={itemVariants}
             className="mb-8"
           >
-            <p className="font-comic text-2xl md:text-3xl text-comic-black mb-4 font-bold">
-              NOT SO TYPICAL GUY
+            <p className="font-fira text-2xl md:text-3xl text-comic-black mb-4 font-black tracking-tight">
+              NOT YOUR TYPICAL MANIFESTO
             </p>
             <p className="font-comic text-lg text-comic-black mb-6">
-              Two iconic superheroes, one unforgettable portfolio experience
+              One unforgettable portfolio experience
             </p>
           </motion.div>
 
@@ -160,31 +160,26 @@ export default function Home() {
             variants={itemVariants}
             className="flex flex-col md:flex-row gap-4 justify-center mb-12"
           >
-            <ComicButton variant="primary">
-              Explore Projects
-            </ComicButton>
-            <ComicButton variant="secondary">
-              Learn About Us
-            </ComicButton>
+            <div className='text-2xl font-medium font-fira tracking-tight'>
+
+            Hi, I’m Umang Raj Jaiswal—
+a Computer Science sophomore, a quizzer-debater by instinct, and someone who genuinely enjoys creating things that people remember.
+
+I’ve been into quizzing and debating since school—
+not just participating, but winning, learning, and occasionally arguing like it’s a sport (because, well… it kind of is).
+
+<div className='text-2xl font-medium mt-16 tracking-tight'>
+And I firmly believe:
+<br />
+<div className='font-bangers font-light tracking-wide mt-2'>
+
+"If you’re doing something or competing for something and you’re not passionate about winning, you’re doing it wrong."
+</div>
+</div>
+            </div>
           </motion.div>
 
-          <motion.div
-            variants={itemVariants}
-            className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-12"
-          >
-            <ComicPanel variant="blue" className="text-white">
-              <div className="text-3xl font-bangers">99</div>
-              <div className="font-comic text-sm">PROJECTS</div>
-            </ComicPanel>
-            <ComicPanel variant="red" className="text-white">
-              <div className="text-3xl font-bangers">24/7</div>
-              <div className="font-comic text-sm">HEROES</div>
-            </ComicPanel>
-            <ComicPanel variant="yellow" className="text-black">
-              <div className="text-3xl font-bangers">∞</div>
-              <div className="font-comic text-sm">POWER</div>
-            </ComicPanel>
-          </motion.div>
+          
         </motion.div>
 
         {/* Animated sound bursts */}
@@ -223,8 +218,53 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { title: 'ICONIC DESIGN', desc: 'Vintage 1970s comic aesthetics' },
-              { title: 'DYNAMIC ACTION', desc: 'Smooth animations throughout' },
-              { title: 'EPIC CONTENT', desc: 'Rich stories and experiences' },
+              { title: 'DYNAMIC ACTION', desc: `I’m not exactly gifted with a sketchbook,
+but give me a laptop and I’ll build you something sleek, aesthetic, and functional.
+
+I love crafting digital experiences—
+websites that don’t just work, but feel good to use.
+It’s where my two worlds meet:
+logic (coding) + creativity (design).` },
+              { title: 'EPIC CONTENT', desc: `I live for the rush of sports—
+the unpredictability, the passion, the heartbreak, the comeback.
+
+I actively follow:
+
+Cricket
+Formula 1
+Football (sometimes)
+Tennis (a little bit… but we’re getting there)
+
+And yes, I play too:
+
+Cricket
+Table Tennis
+Snooker
+Football
+
+Because watching isn’t enough—you’ve got to feel the game.` },
+              { title: 'SERIAL CINEPHILE', desc: `I’ve watched content across languages, genres, and moods—
+from comfort sitcoms to intense thrillers.
+
+Do I qualify as a cinephile?
+I’d say… let’s debate that.` },
+              { title: 'DYNAMIC ACTION', desc: `I’ve also spent a fair share of time gaming—growing up through different eras of games, from early classics to modern titles.
+
+From Road Rash, Need for Speed: Most Wanted, and GTA: Vice City/San Andreas,
+to competitive and story-driven titles like Counter-Strike, Call of Duty, and FIFA,
+and more recent games like Valorant, GTA V, EA Sports FC, and Forza Horizon—
+
+I’ve explored a mix of fast-paced, strategic, and open-world experiences, along with a few niche gems along the way.
+
+Gaming, for me, has always been more than just time-pass—
+it’s about competition, strategy, and immersion.` },
+              { title: 'DANCE MONKEY', desc: `From freestyle to salsa, waltz to Bollywood,
+I’ve explored different styles—
+not perfectly, but enthusiastically.
+\n
+Also, fun fact:
+I once played Mowgli in The Jungle Book 🐒
+so yes, there was a brief acting era too.` },
             ].map((feature, i) => (
               <motion.div
                 key={i}

@@ -11,16 +11,15 @@ export function Navbar() {
     { label: 'Home', href: '/' },
     { label: 'About Me', href: '/about' },
     { label: 'Events', href: '/events' },
-    { label: 'Contact', href: '/contact' },
     { label: 'Manifesto', href: '/manifesto' },
   ]
 
   return (
-    <nav className="sticky top-0 z-50 bg-comic-yellow border-b-4 border-black comic-shadow ">
+    <nav className="sticky top-0 z-50 bg-[#FFF000] border-b-4 border-black comic-shadow ">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
         {/* Logo - Bat symbol */}
         <Link href="/" className="font-bangers text-2xl font-bold text-comic-red">
-          ★ BAT ★
+          ★ URJ ★
         </Link>
 
         {/* Desktop Menu */}

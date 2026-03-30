@@ -8,8 +8,11 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        comic: 'var(--font-comic)',
-        bangers: 'var(--font-bangers)',
+        
+  comic: ['var(--font-comic)', 'cursive'],
+  bangers: ['var(--font-bangers)', 'cursive'],
+  fira: ['var(--font-fira)', 'sans-serif'],
+
       },
       colors: {
         'comic-yellow': '#FFF000',
