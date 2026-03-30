@@ -1,11 +1,15 @@
 import type { Metadata } from 'next'
-import { Bangers, Comic_Neue } from 'next/font/google'
+import { Bangers, Comic_Neue, Fira_Sans_Condensed } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const bangers = Bangers({ weight: '400', subsets: ["latin"], variable: '--font-bangers' });
 const comicNeue = Comic_Neue({ weight: ['400', '700'], subsets: ["latin"], variable: '--font-comic' });
-
+const fsC = Fira_Sans_Condensed({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-fira',
+});
 export const metadata: Metadata = {
   title: 'Batman × Spider-Man Comic Portfolio',
   description: 'A vintage 1970s comic book portfolio celebrating two iconic superheroes',
@@ -35,8 +39,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${bangers.variable} ${comicNeue.variable}`}>
-      <body className="font-comic antialiased bg-yellow-50">
+    <html lang="en">
+      <body className={`${bangers.variable} ${comicNeue.variable} ${fsC.className}  antialiased bg-yellow-50`}>
         {children}
         <Analytics />
       </body>
