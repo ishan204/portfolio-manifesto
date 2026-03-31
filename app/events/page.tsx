@@ -5,63 +5,65 @@ import { motion } from 'framer-motion'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { ComicPanel } from '@/components/ComicPanel'
-import { ComicButton } from '@/components/ComicButton'
 import { HalftoneOverlay } from '@/components/HalftoneOverlay'
 
 const events = [
   {
-    month: 'JAN',
-    date: '15',
-    year: '2024',
-    title: 'TechTalk: Web Development Trends',
-    location: 'BIT Mesra',
-    description: 'Shared insights on latest web development frameworks and best practices with 200+ students.',
-    category: 'Speaking',
+    title: 'QUIZZES',
+    description: `SAHODAYA QUIZ’22 WINNER
+SAHODAYA QUIZ’23 WINNER
+AHS INDEPENDANCE DAY QUIZ’22 WINNER
+AHS INDEPENDANCE DAY QUIZ’23 WINNER
+MELA QUIZ’24 RUNNER UP
+PANTHEON QUIZ’24 RUNNER UP
+BITOTSAV QUIZ’25 RUNNER UP
+ROBOTS IN DISGUISE RUNNER UP
+BLURRED OUT’25 WINNER
+LOST IN TRANSLATION’25 WINNER
+THE CHILLED QUIZ FINALIST
+MONTY QUIZ 5.0 SEMI-FINALIST
+HINDU QUIZ
+NEP QUIZ’26
+WORLD MUSIC DAY QUIZ FINALIST
+LEGENDS QUIZ’24 RUNNER UP
+FOOD AND BEVERAGES QUIZ FINALIST`,
+    category: 'Quiz',
   },
   {
-    month: 'FEB',
-    date: '20',
-    year: '2024',
-    title: 'Competitive Programming Workshop',
-    location: 'Online',
-    description: 'Conducted a workshop on algorithmic problem-solving and competitive programming techniques.',
-    category: 'Workshop',
+    title: 'PD',
+    description: `GENESIS BPD
+DTU PD, FINALIST
+UHURU PD`,
+    category: 'PD',
   },
   {
-    month: 'MAR',
-    date: '10',
-    year: '2024',
-    title: 'Hackathon 2024 - Judge & Mentor',
-    location: 'BIT Mesra',
-    description: 'Judged and mentored 50+ teams in a 24-hour hackathon event focused on innovation.',
-    category: 'Hackathon',
+    title: 'DEBATES',
+    description: `MOODI TURNCOAT DEBATE’24 FINALIST
+SAHODAYA’23 DEBATE WINNER
+AHS REPUBLIC DAY DEBATE’23 WINNER
+NEP DEBATE’25 WINNER`,
+    category: 'Debate',
   },
   {
-    month: 'APR',
-    date: '25',
-    year: '2024',
-    title: 'Full-Stack Development Bootcamp',
-    location: 'Online',
-    description: 'Led a comprehensive bootcamp covering React, Node.js, and database design for 150+ participants.',
-    category: 'Training',
+    title: 'QUIZMASTER',
+    description: `WRAPPED QUIZ’25
+BITOTSAV QUIZ’26`,
+    category: 'Quizmaster',
   },
   {
-    month: 'MAY',
-    date: '12',
-    year: '2024',
-    title: 'Tech Community Meetup',
-    location: 'Ranchi',
-    description: 'Presented on career growth in tech and building products that matter to 300+ attendees.',
-    category: 'Meetup',
+    title: 'MUN',
+    description: `DPS MUN’21, SPECIAL MENTION
+DPS MUN’22, VERBAL MENTION
+BITMUN’25, GUEST DELEGATE
+IITKGP GMUN’26
+BITMUN’26, SPECIAL MENTION`,
+    category: 'MUN',
   },
   {
-    month: 'JUN',
-    date: '30',
-    year: '2024',
-    title: 'Open Source Contribution Session',
-    location: 'Virtual',
-    description: 'Guided students through contributing to open-source projects with real-world impact.',
-    category: 'Workshop',
+    title: 'MISCELLANEOUS',
+    description: `MOODI’24 ENGLISH SLAM POETRY
+MOODI’24 HINDI SLAM POETRY FINALIST`,
+    category: 'Misc',
   },
 ]
 
@@ -87,15 +89,17 @@ export default function Events() {
 
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case 'Speaking':
-        return 'blue'
-      case 'Hackathon':
-        return 'red'
-      case 'Workshop':
+      case 'Quiz':
         return 'yellow'
-      case 'Training':
+      case 'PD':
         return 'blue'
-      case 'Meetup':
+      case 'Debate':
+        return 'red'
+      case 'Quizmaster':
+        return 'yellow'
+      case 'MUN':
+        return 'blue'
+      case 'Misc':
         return 'red'
       default:
         return 'yellow'
@@ -117,15 +121,15 @@ export default function Events() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            EVENTS & TALKS
+            EVENTS & ACHIEVEMENTS
           </motion.h1>
           <motion.p
-            className="font-comic text-xl  max-w-3xl"
+            className="font-comic text-xl max-w-3xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Events I&apos;ve participated in, organized, and spoken at. Building community through knowledge sharing.
+            A snapshot of my journey across quizzes, debates, MUNs, and beyond.
           </motion.p>
         </div>
       </section>
@@ -153,93 +157,21 @@ export default function Events() {
                 >
                   <ComicPanel
                     variant={colorVariant as 'default' | 'blue' | 'red' | 'yellow'}
-                    className={`h-full flex flex-col ${
+                    className={`h-full ${
                       isYellow ? 'text-black' : 'text-white'
                     }`}
                   >
-                    {/* Date & Category Badge */}
-                    <div className="flex gap-4 items-start mb-4">
-                      <div className={`text-center px-3 py-2 border-2 border-current ${
-                        isYellow ? 'bg-comic-red text-white' : 'bg-comic-yellow text-black'
-                      }`}>
-                        <div className="font-bangers text-sm font-bold">{event.month}</div>
-                        <div className="font-bangers text-2xl font-bold">{event.date}</div>
-                        <div className="font-comic text-xs">{event.year}</div>
-                      </div>
-                      <div className={`text-sm font-comic font-bold px-2 py-1 border-2 border-current ${
-                        isYellow ? 'bg-comic-blue text-white' : 'bg-comic-black text-white'
-                      }`}>
-                        {event.category}
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <h3 className="font-bangers text-2xl mb-2 text-comic-yellow">
+                    <h3 className="font-bangers text-2xl mb-4 text-comic-yellow">
                       {event.title}
                     </h3>
                     
-                    <p className="font-comic text-sm mb-4 flex-grow">
+                    <p className="font-comic text-sm whitespace-pre-line leading-relaxed">
                       {event.description}
                     </p>
-                    
-                    <div className="bg-black bg-opacity-20 px-3 py-2 rounded mb-4 font-comic text-sm font-bold">
-                      📍 {event.location}
-                    </div>
-                    
-                    <ComicButton
-                      variant={isYellow ? 'outline' : 'primary'}
-                      className="w-full text-sm"
-                    >
-                      {event.location === 'Online' ? 'VIEW EVENT' : 'LEARN MORE'}
-                    </ComicButton>
                   </ComicPanel>
                 </motion.div>
               )
             })}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Newsletter Section */}
-      <section className="relative py-20 bg-comic-blue text-black border-t-8 border-black">
-        <HalftoneOverlay color="blue" opacity={0.2} />
-        
-        <div className="max-w-3xl mx-auto px-4 text-center relative z-10">
-          <motion.h2
-            className="font-bangers text-4xl text-comic-yellow mb-6"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            GET NOTIFIED
-          </motion.h2>
-          
-          <motion.p
-            className="font-comic text-lg mb-8"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            Want to know when I&apos;m speaking or organizing the next event? Subscribe to stay updated!
-          </motion.p>
-
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <input
-              type="email"
-              placeholder="Your email"
-              className="flex-1 px-4 py-3 font-comic text-black border-4 border-black comic-shadow"
-            />
-            <ComicButton variant="secondary">
-              SUBSCRIBE
-            </ComicButton>
           </motion.div>
         </div>
       </section>
