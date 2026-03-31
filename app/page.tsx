@@ -257,13 +257,20 @@ I’ve explored a mix of fast-paced, strategic, and open-world experiences, alon
 
 Gaming, for me, has always been more than just time-pass—
 it’s about competition, strategy, and immersion.` },
-              { title: 'DANCING QUEEN', desc: `From freestyle to salsa, waltz to Bollywood,
+              {
+  title: 'DANCING QUEEN',
+  desc: `From freestyle to salsa, waltz to Bollywood,
 I’ve explored different styles—
 not perfectly, but enthusiastically.
-\n
+
 Also, fun fact:
 I once played Mowgli in The Jungle Book 🐒
-so yes, there was a brief acting era too.` },
+so yes, there was a brief acting era too.
+
+Watch a glimpse here (1:24):
+https://www.youtube.com/watch?v=pki8clH8YHM&t=81s
+`
+},
             ].map((feature, i) => (
               <motion.div
                 key={i}
