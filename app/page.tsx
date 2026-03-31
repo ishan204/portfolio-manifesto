@@ -257,14 +257,7 @@ I’ve explored a mix of fast-paced, strategic, and open-world experiences, alon
 
 Gaming, for me, has always been more than just time-pass—
 it’s about competition, strategy, and immersion.` },
-      { title: 'CREATER HUH?', desc: `I’m not exactly gifted with a sketchbook,
-but give me a laptop and I’ll build you something sleek, aesthetic, and functional.
-
-I love crafting digital experiences—
-websites that don’t just work, but feel good to use.
-It’s where my two worlds meet:
-logic (coding) + creativity (design).` },
-      { title: 'SPOTIFY WRAPPED', desc: `My music taste?
+              { title: 'SPOTIFY WRAPPED', desc: `My music taste?
 All over the place, in the best way possible.
 From Lata Mangeshkar and Kishore Kumar, to Arijit Singh and Atif Aslam,
 from One Direction (yes, a proud Directioner) to Ed Sheeran,
