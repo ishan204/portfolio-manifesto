@@ -182,7 +182,7 @@ the club`,
   const handleDownloadManifesto = () => {
     // Create a link to download the PDF
     const link = document.createElement('a')
-    link.href = '/manifesto.pdf' // Path to your PDF in the public folder
+    link.href = '/The Manifesto.pdf' // Path to your PDF in the public folder
     link.download = 'Umang_Raj_Jaiswal_Manifesto.pdf'
     document.body.appendChild(link)
     link.click()
