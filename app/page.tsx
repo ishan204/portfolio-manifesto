@@ -162,10 +162,10 @@ export default function Home() {
           >
             <div className='text-2xl font-medium font-fira tracking-tight'>
 
-            Hi, I’m Umang Raj Jaiswal—
+            Hi, I’m Umang Raj Jaiswal,
 a Computer Science sophomore, a quizzer-debater by instinct, and someone who genuinely enjoys creating things that people remember.
 
-I’ve been into quizzing and debating since school—
+I’ve been into quizzing and debating since school,
 not just participating, but winning, learning, and occasionally arguing like it’s a sport (because, well… it kind of is).
 
 <div className='text-2xl font-medium mt-16 tracking-tight'>
@@ -217,7 +217,6 @@ And I firmly believe:
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { title: 'ICONIC DESIGN', desc: 'Vintage 1970s comic aesthetics' },
               { title: 'DYNAMIC ACTION', desc: `I’m not exactly gifted with a sketchbook,
 but give me a laptop and I’ll build you something sleek, aesthetic, and functional.
 
@@ -225,7 +224,7 @@ I love crafting digital experiences—
 websites that don’t just work, but feel good to use.
 It’s where my two worlds meet:
 logic (coding) + creativity (design).` },
-              { title: 'EPIC CONTENT', desc: `I live for the rush of sports—
+              { title: 'SPORTS - HOBBY OR PASSION', desc: `I live for the rush of sports—
 the unpredictability, the passion, the heartbreak, the comeback.
 
 I actively follow:
@@ -250,15 +249,15 @@ Do I qualify as a cinephile?
 I’d say… let’s debate that.` },
               { title: 'DYNAMIC ACTION', desc: `I’ve also spent a fair share of time gaming—growing up through different eras of games, from early classics to modern titles.
 
-From Road Rash, Need for Speed: Most Wanted, and GTA: Vice City/San Andreas,
+From Road Rash, NFS, IGI, Assasin's Creed and GTA: Vice City/San Andreas,
 to competitive and story-driven titles like Counter-Strike, Call of Duty, and FIFA,
-and more recent games like Valorant, GTA V, EA Sports FC, and Forza Horizon—
+and more recent games like Valorant, GTA V, God of War, RDR, Resident Evil, and Forza Horizon—
 
 I’ve explored a mix of fast-paced, strategic, and open-world experiences, along with a few niche gems along the way.
 
 Gaming, for me, has always been more than just time-pass—
 it’s about competition, strategy, and immersion.` },
-              { title: 'DANCE MONKEY', desc: `From freestyle to salsa, waltz to Bollywood,
+              { title: 'DANCING QUEEN', desc: `From freestyle to salsa, waltz to Bollywood,
 I’ve explored different styles—
 not perfectly, but enthusiastically.
 \n
@@ -299,10 +298,11 @@ so yes, there was a brief acting era too.` },
             viewport={{ once: true }}
           >
             <h2 className="font-bangers text-4xl text-black mb-6">
-              READY FOR ACTION?
+              THREE THINGS WE LIVE FOR - 
+              FUN, FUN AND MORE FUN
             </h2>
             <p className="font-comic text-black mb-8 text-lg">
-              Dive into our world and discover amazing projects, stories, and experiences.
+              Dive into this chaotic yet mesmerizing journey with me and trust me you won't regret it.
             </p>
             <ComicButton variant="outline">
               START YOUR ADVENTURE
