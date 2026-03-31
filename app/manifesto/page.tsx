@@ -329,47 +329,6 @@ actual progress.
         </div>
       </section>
 
-      {/* Code of Honor Section */}
-      <section className="relative py-20 bg-comic-blue text-black border-y-8 border-black">
-        <HalftoneOverlay color="blue" opacity={0.2} />
-        
-        <div className="max-w-4xl mx-auto px-4 relative z-10">
-          <motion.h2
-            className="font-bangers text-5xl text-comic-yellow text-center mb-12"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            MY CODE OF HONOR
-          </motion.h2>
-
-          <div className="space-y-4">
-            {[
-              'Build solutions that solve real problems',
-              'Write code with clarity and purpose',
-              'Never compromise on quality or ethics',
-              'Lift others through knowledge sharing',
-              'Stay curious and embrace challenges',
-              'Lead with integrity in all endeavors',
-              'Commit fully to every project and person',
-            ].map((code, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <CaptionBox number={i + 1} className="bg-comic-yellow text-black">
-                  <strong>{code}</strong>
-                </CaptionBox>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Pledge Section */}
       <section className="relative py-20 bg-comic-yellow border-t-8 border-black">
         <HalftoneOverlay color="black" opacity={0.1} />
