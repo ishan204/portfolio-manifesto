@@ -152,7 +152,7 @@ export default function Home() {
               NOT YOUR TYPICAL MANIFESTO
             </p>
             <p className="font-comic text-lg text-comic-black mb-6">
-              One unforgettable portfolio experience
+              One unforgettable manifesto experience
             </p>
           </motion.div>
 
@@ -217,7 +217,7 @@ And I firmly believe:
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { title: 'VREATER HUH?', desc: `I’m not exactly gifted with a sketchbook,
+              { title: 'CREATER HUH?', desc: `I’m not exactly gifted with a sketchbook,
 but give me a laptop and I’ll build you something sleek, aesthetic, and functional.
 
 I love crafting digital experiences—
@@ -247,7 +247,7 @@ from comfort sitcoms to intense thrillers.
 
 Do I qualify as a cinephile?
 I’d say… let’s debate that.` },
-              { title: 'DYNAMIC ACTION', desc: `I’ve also spent a fair share of time gaming—growing up through different eras of games, from early classics to modern titles.
+              { title: 'GAMER ENOUGH', desc: `I’ve also spent a fair share of time gaming—growing up through different eras of games, from early classics to modern titles.
 
 From Road Rash, NFS, IGI, Assasin's Creed and GTA: Vice City/San Andreas,
 to competitive and story-driven titles like Counter-Strike, Call of Duty, and FIFA,
