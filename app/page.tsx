@@ -212,7 +212,7 @@ And I firmly believe:
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            SUPER FEATURES
+            A LITTLE ABOUT ME
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
