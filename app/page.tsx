@@ -305,7 +305,7 @@ so yes, there was a brief acting era too.` },
               Dive into this chaotic yet mesmerizing journey with me and trust me you won't regret it.
             </p>
             <ComicButton variant="outline">
-              START YOUR ADVENTURE
+              LET'S BEGIN THEN!!
             </ComicButton>
           </motion.div>
         </div>
