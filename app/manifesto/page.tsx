@@ -353,14 +353,15 @@ actual progress.
             viewport={{ once: true }}
           >
             <p className="mb-4">
-              I pledge to live by these principles, to build with purpose, and to create lasting impact 
-              in the world of technology and beyond.
+              I pledge to live by these strong words by my idol MS Dhoni - 
+              "I want people to remember me as a good person, not just a good cricketer."
             </p>
             <p className="font-bangers text-3xl mb-4">
-              ★ FOR EXCELLENCE & IMPACT ★
+              ★ FOR THE CLUB. FOR THE PEOPLE. FOR THE LEGACY ★
             </p>
             <p className="mb-4">
-              I will push boundaries, inspire others, and never stop learning. This is my commitment.
+              I will strive to create opportunities, encourage participation, and ensure that every effort contributes to something meaningful.
+              I along with my friends will push for better systems, stronger execution, and a culture where people don’t just join but truly belong and grow.
             </p>
             <p className="font-bold text-comic-yellow">
               THIS IS MY SOLEMN OATH
@@ -415,7 +416,7 @@ actual progress.
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            Or view the full text above. Save it, print it, live it.
+            Or view the full text above. Lets maintain the legacy of UNESQUO together.
           </motion.p>
         </div>
       </section>
