@@ -217,7 +217,7 @@ And I firmly believe:
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { title: 'DYNAMIC ACTION', desc: `I’m not exactly gifted with a sketchbook,
+              { title: 'VREATER HUH?', desc: `I’m not exactly gifted with a sketchbook,
 but give me a laptop and I’ll build you something sleek, aesthetic, and functional.
 
 I love crafting digital experiences—
@@ -259,17 +259,26 @@ Gaming, for me, has always been more than just time-pass—
 it’s about competition, strategy, and immersion.` },
               {
   title: 'DANCING QUEEN',
-  desc: `From freestyle to salsa, waltz to Bollywood,
-I’ve explored different styles—
-not perfectly, but enthusiastically.
-
-Also, fun fact:
-I once played Mowgli in The Jungle Book 🐒
-so yes, there was a brief acting era too.
-
-Watch a glimpse here (1:24):
-https://www.youtube.com/watch?v=pki8clH8YHM&t=81s
-`
+  desc: (
+    <>
+      From freestyle to salsa, waltz to Bollywood,
+      I’ve explored different styles—
+      not perfectly, but enthusiastically.
+      <br /><br />
+      Also, fun fact:
+      I once played Mowgli in The Jungle Book 🐒
+      so yes, there was a brief acting era too.
+      <br /><br />
+      Watch a glimpse here (1:24):{" "}
+      <a
+        href="https://www.youtube.com/watch?v=pki8clH8YHM&t=81s"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Click to watch
+      </a>
+    </>
+  )
 },
             ].map((feature, i) => (
               <motion.div
